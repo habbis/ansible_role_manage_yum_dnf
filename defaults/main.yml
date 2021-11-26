@@ -1,0 +1,4 @@
+---
+# variables
+proxy_server: hf-proxy.no.habbfarm.net
+proxy_port: 8888
