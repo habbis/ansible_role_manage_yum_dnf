@@ -1,25 +1,21 @@
 ---
 # tasks
- - name:  yum config rhel 8
-   ansible.builtin.template:
-     src: templates/yum.conf.j2
-     dest: /etc/dnf/dnf.conf
-     #dest: /etc/yum.conf
-     owner: root
-     group: root
-     mode: '0644'
-   #when: (ansible_distribution == "RedHat") or (ansible_distribution == "CentOS") or (ansible_distribution == "OracleLinux")}
-   when: ansible_pkg_mgr == "dnf"
+- name: yum config rhel 8
+  ansible.builtin.template:
+    src: templates/yum.conf.j2
+    dest: /etc/dnf/dnf.conf
+    #dest: /etc/yum.conf
+    owner: root
+    group: root
+    mode: '0644'
+  when: ansible_pkg_mgr == "dnf"
 
 
- - name:  yum config rhel 7
-   ansible.builtin.template:
-     src: templates/yum.conf_rhel7.j2
-     dest: /etc/yum.conf
-     owner: root
-     group: root
-     mode: '0644'
-   #when: (ansible_distribution == "RedHat") or (ansible_distribution == "CentOS") or (ansible_distribution == "OracleLinux")
-   when: ansible_pkg_mgr == "yum"
-
-
+- name: yum config rhel 7
+  ansible.builtin.template:
+    src: templates/yum.conf_rhel7.j2
+    dest: /etc/yum.conf
+    owner: root
+    group: root
+    mode: '0644'
+  when: ansible_pkg_mgr == "yum"
