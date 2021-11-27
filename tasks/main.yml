@@ -2,7 +2,7 @@
 # tasks
 - name: yum config rhel 8
   ansible.builtin.template:
-    src: templates/yum.conf.j2
+    src: templates/dnf.conf.j2
     dest: /etc/dnf/dnf.conf
     #dest: /etc/yum.conf
     owner: root
