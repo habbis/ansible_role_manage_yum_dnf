@@ -42,7 +42,6 @@ jobs:
       matrix:
         distro:
           - centos7
-          - centos8
           - ubi8
           - rockylinux8
 
